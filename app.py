@@ -3,7 +3,7 @@ import streamlit as st
 import plotly.express as px 
 
 # Load the data
-vehicle_df = pd.read_csv('/Users/stephanethions/Documents/GitHub/sprint_7/vehicles_us.csv')
+vehicle_df = pd.read_csv('vehicles_us.csv')
 
 # Display the data
 print(vehicle_df.head())
