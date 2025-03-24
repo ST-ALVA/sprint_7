@@ -23,7 +23,7 @@ if build_histogram:
     st.plotly_chart(fig, use_container_width=True)
 
 # Scatter Plot Button
-scatter_button = st.button('Show Scatter Plot for Vehicle Odometer and Price')
+scatter_button = st.button('Crear Scatter Plot de Odometro vs Precio')
 
 # Creates a Scatter Plot trigerred by the above button showing the relation between model_year and vehicle cylinders
 if scatter_button:
