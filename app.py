@@ -10,14 +10,16 @@ print(vehicle_df.head())
 vehicle_df.info()
 
 # Display a header title for the web app
-st.header('Vehicle Dataset')
+st.header('Visualización de Datos de Vehiculos')
 
 # Crear una casilla de verificacion
-build_histogram = st.checkbox('Build Histogram for Vehicle Model')
+build_histogram = st.checkbox('Crear Histograma de Modelos de Vehiculo')
 
 # Create an Histogram triggered by the checkbox showing the model column data
 if build_histogram:
-    fig = px.histogram(vehicle_df, x='model', nbins=50)
+    st.write('Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
+    fig = px.histogram(vehicle_df, x='model', nbins=50, labels={'model' : 'Modelo de Vehiculo', 'count' : 'Numero de Vehiculos'})
+    fig.update_layout(yaxis_title='Numero de Vehiculos') 
     st.plotly_chart(fig, use_container_width=True)
 
 # Scatter Plot Button
@@ -25,6 +27,6 @@ scatter_button = st.button('Show Scatter Plot for Vehicle Odometer and Price')
 
 # Creates a Scatter Plot trigerred by the above button showing the relation between model_year and vehicle cylinders
 if scatter_button:
-    fig = px.scatter(vehicle_df, x='odometer', y='price')
+    st.write('Scatter plot de Odometro vs Precio de los vehiculos')
+    fig = px.scatter(vehicle_df, x='odometer', y='price', labels={'odometer' : 'Odometro', 'price' : 'Precio'})
     st.plotly_chart(fig, use_container_width=True)
-
