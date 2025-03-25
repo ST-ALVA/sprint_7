@@ -45,5 +45,5 @@ scatter_button = st.button('Crear Scatter Plot de Odómetro vs Precio')
 # Creates a Scatter Plot trigerred by the above button showing the relation between model_year and vehicle cylinders
 if scatter_button:
     st.write('Scatter plot de Odómetro vs Precio de los vehículos')
-    fig = px.scatter(filtered_df, x='odometer', y='price', labels={'odometer' : 'Odometro', 'price' : 'Precio'})
+    fig = px.scatter(filtered_df, x='odometer', y='price', labels={'odometer' : 'Odómetro', 'price' : 'Precio'})
     st.plotly_chart(fig, use_container_width=True)
